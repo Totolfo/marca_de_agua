@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  marca-agua:
+    build: .
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    # Seguridad opcional adicional:
+    read_only: false   # pon true si no montas nada extra que requiera escritura
+    tmpfs:
+      - /tmp
+      - /var/run/apache2
+      - /var/lock/apache2
