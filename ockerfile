@@ -25,3 +25,4 @@ COPY docker/php.ini /usr/local/etc/php/conf.d/custom.ini
 USER www-data
 EXPOSE 8080
 CMD ["apache2-foreground"]
+ 
