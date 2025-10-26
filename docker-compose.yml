@@ -1,12 +1,16 @@
 version: "3.9"
 services:
   marca-agua:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "${PUERTO}:8080"
     environment:
       - PORT=${PUERTO}
     restart: unless-stopped
+    volumes:
+      - ./:/var/www/html
     # Seguridad opcional adicional:
     read_only: false   # pon true si no montas nada extra que requiera escritura
     tmpfs:
